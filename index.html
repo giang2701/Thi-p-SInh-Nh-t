@@ -149,14 +149,18 @@
                     <div class="wrapperLetter">
                         <div class="giftbox">
                             <div class="img">
-                                <img src="../image1/giftbox.png" alt="" />
+                                <img
+                                    src="./image1/giftbox.jpg"
+                                    alt=""
+                                    width="500px"
+                                />
                             </div>
                         </div>
                         <div class="textLetter">
                             <h2></h2>
                             <p class="contentLetter"></p>
                             -----------------------------
-                            <a>Em chọn đi <<:</a>
+                            <!-- <a>Em chọn đi <<:</a> -->
 
                             <div class="heartAnimation">
                                 <img
@@ -194,7 +198,7 @@
                 <div class="before"></div>
             </div>
         </div>
-        <audio src="../sound/See-Tinh.mp3" autoplay></audio>
+        <audio src="./sound/See-Tinh.mp3" autoplay></audio>
     </body>
     <script>
         button.addEventListener("click", function () {
@@ -321,7 +325,7 @@
                     setTimeout(() => {
                         document.querySelector(".button").innerHTML =
                             "Nhận thư";
-                    }, 4000);
+                    }, 3000);
                 }
             }
 
@@ -333,7 +337,7 @@
         // .textLetter text h2
         let indexText = 0;
         let textLetter = document.querySelector(".textLetter h2");
-        const textLetterH2 = "Gửi em!";
+        const textLetterH2 = "Gửi bạn!";
         let timoutTextLetter;
 
         function textCharLetter() {
