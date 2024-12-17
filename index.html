@@ -12,6 +12,32 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <style>
+            #playIcon {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #f04d4d;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            #playIcon:hover {
+                background-color: #e03e3e;
+            }
+
+            #playIcon img {
+                width: 24px;
+                height: 24px;
+            }
+        </style>
     </head>
     <body
         class="post-template-default single single-post postid-12802 single-format-standard"
@@ -198,7 +224,13 @@
                 <div class="before"></div>
             </div>
         </div>
-        <audio src="./sound/See-Tinh.mp3" autoplay></audio>
+        <div id="playIcon">
+            <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/play.png"
+                alt="Play"
+            />
+        </div>
+        <audio src="./sound/See-Tinh.mp3" autoplay id="audio"></audio>
     </body>
     <script>
         button.addEventListener("click", function () {
@@ -227,6 +259,26 @@
         type="text/javascript"
         src="https://code.jquery.com/jquery-3.6.3.min.js"
     ></script>
+    <script>
+        // Lấy phần tử nút và audio
+        const playIcon = document.getElementById("playIcon");
+        const audio = document.getElementById("audio");
+
+        let isPlaying = false; // Trạng thái phát nhạc
+
+        // Bắt sự kiện click
+        playIcon.addEventListener("click", () => {
+            if (isPlaying) {
+                audio.pause(); // Dừng nhạc
+                isPlaying = false;
+                playIcon.style.backgroundColor = "#f04d4d"; // Đổi lại màu nút
+            } else {
+                audio.play(); // Phát nhạc
+                isPlaying = true;
+                playIcon.style.backgroundColor = "#4CAF50"; // Đổi màu nút khi đang phát
+            }
+        });
+    </script>
     <script>
         $(window).on("load", function (event) {
             $("body").removeClass("preloading");
